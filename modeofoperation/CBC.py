@@ -1,8 +1,25 @@
 # soosbk 나중에 개인 포트폴리오로 활용될 자료입니다. 무단복제 하지마세요
 #CBC
-#padding: one-zero (padding fun은 ECB.py 에 있습니다)
+#padding: one-zero
 
+
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 26 12:02:29 2020
+
+@author: soosbk
+"""
 import random
+
+def padding(pt):
+    pad_pt=[]
+    pad_pt=pt
+    pad_pt.append(0x10)
+    while(1):
+        if(len(pad_pt)%16==0): break
+        else: pad_pt.append(0x00)
+        
+    return pad_pt
 
 def get_nonce(): # Nonce 생성 하는 함수
     nonce = [0 for i in range(16)]
